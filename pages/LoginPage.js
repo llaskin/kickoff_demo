@@ -26,10 +26,10 @@ class LoginPage extends Page {
     return this.errorText.getText()
   }
 
-  login () {
+  login (username, password) {
     this.loginInput.setValue(username)
     this.passwordInput.setValue(password)
-    submit()
+    this.submit()
   }
 }
 
