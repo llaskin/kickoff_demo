@@ -1,11 +1,5 @@
-/**
- * Created by titusfortner on 11/23/16.
- */
-function Page () {
+export default class Page {
+  open (path) {
+    return browser.url('/' + (path ? path : ''))
+  }
 }
-
-Page.prototype.open = function (path) {
-    browser.url('/' + path)
-};
-
-module.exports = new Page();

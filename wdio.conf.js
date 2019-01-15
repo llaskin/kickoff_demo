@@ -60,7 +60,7 @@ exports.config = {
         // 5 instance gets started at a time.
         //maxInstances: 5,
         //
-      {browserName: 'firefox', platform: 'Windows 10', version: 'latest'}
+      {browserName: 'chrome', platform: 'Windows 10', version: 'latest'}
       // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
       // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
       // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'},
@@ -158,7 +158,8 @@ exports.config = {
     //
 
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        compilers: ['js:@babel/register']
     },
     // =====
     // Hooks

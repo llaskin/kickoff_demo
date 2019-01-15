@@ -1,43 +1,42 @@
-/**
- * Created by Leo Laskin on 1/14/19.
- * Page Object file for the Inventory Page
- */
+import Page from './Page'
+import LoginPage from './LoginPage'
+import resources from '../resources'
 
- var Page = require('./page');
- var LoginPage = require('LoginPage');
- var resources = require('../resources');
+class InventoryPage extends Page {
+  get inventoryItems () { return $$('.inventory_item') }
+  get addToCartButton () { return $('.add-to-cart-button') }
+  get cartBadge () { return $('.fa-layers-counter.shopping_cart_badge') }
+  get getCartCount () { return this.cartBadge.getText() }
 
-var InventoryPage = Object.create(Page, {
-    open: {
-        value: function () {
-           	LoginPage.open();
-			LoginPage.login(resources.goodUsername, resources.password);
-        }
-    },
+  open (username, password) {
+    LoginPage.open();
+    LoginPage.login(
+      username || resources.goodUsername,
+      password || resources.password
+    )
+  }
 
-    inventoryItems: {
-        get: function () {
-            return browser.elements(".inventory_item");
-            //For counting the number of inventory elements
-        }
-    },
-    addToCartButton: {
-        get: function () {
-            return browser.element(".add-to-cart-button");
-            //For counting the number of inventory elements
-        }
-    },
-    cartBadge: {
-        get: function () {
-            return browser.element(".fa-layers-counter.shopping_cart_badge");
-            //For counting the number of inventory elements
-        }
-    },
+  submit () {
+    return this.loginButton.click()
+  }
 
-    getCartCount: {
-        value: function () {
-            return this.cartBadge.getText();
-        }
-    }
-});
+  setUsername (username) {
+    return this.loginInput.setValue(username)
+  }
 
+  setPassword (password) {
+    return this.passwordInput.setValue(password)
+  }
+
+  getErrorMessage () {
+    return this.errorText.getText()
+  }
+
+  login () {
+    this.loginInput.setValue(username)
+    this.passwordInput.setValue(password)
+    submit()
+  }
+}
+
+export default new InventoryPage()
