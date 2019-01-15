@@ -1,7 +1,5 @@
-# JS-Mocha-WebdriverIO-Selenium
-[![Travis Status](https://travis-ci.org/saucelabs-sample-test-frameworks/JS-Mocha-WebdriverIO-Selenium.svg?branch=master)](https://travis-ci.org/saucelabs-sample-test-frameworks/JS-Mocha-WebdriverIO-Selenium)
-
-This code is provided on an "AS-IS” basis without warranty of any kind, either express or implied, including without limitation any implied warranties of condition, uninterrupted use, merchantability, fitness for a particular purpose, or non-infringement. Your tests and testing environments may require you to modify this framework. Issues regarding this framework should be submitted through GitHub. For questions regarding Sauce Labs integration, please see the Sauce Labs documentation at https://wiki.saucelabs.com/. This framework is not maintained by Sauce Labs Support.
+# Kickoff Demo
+This code is provided for Acme, Inc for use of testing their SauceSwag application.  It shows good examples of testing and promotes ideal test automation best practices.
 
 ### Environment Setup
 
@@ -32,10 +30,17 @@ This code is provided on an "AS-IS” basis without warranty of any kind, either
 
 [Sauce Labs Dashboard](https://saucelabs.com/beta/dashboard/)
 
-### Advice/Troubleshooting
+### Best Practices Exemplified
 
-1. There may be additional latency when using a remote webdriver to run tests on Sauce Labs. Timeouts or Waits may need to be increased.
-    * [Selenium tips regarding explicit waits](https://wiki.saucelabs.com/display/DOCS/Best+Practice%3A+Use+Explicit+Waits)
+* Parallelization
+
+* Behavior Driven Development(BDD)
+
+* Page Objects
+
+* Explicit Waiting for elements
+
+* Positive and Negative testing
 
 ### Resources
 ##### [Sauce Labs Documentation](https://wiki.saucelabs.com/)
@@ -48,5 +53,3 @@ This code is provided on an "AS-IS” basis without warranty of any kind, either
 
 ##### [Mocha Documentation](https://mochajs.org/)
 
-##### [Stack Overflow](http://stackoverflow.com/)
-* A great resource to search for issues not explicitly covered by documentation
