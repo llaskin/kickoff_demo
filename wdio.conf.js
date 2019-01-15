@@ -1,3 +1,7 @@
+const path = require('path')
+
+const LOG_DIR = path.join(__dirname, 'log')
+
 exports.config = {
 
     //
@@ -86,7 +90,8 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'error',
+    logLevel: 'trace',
+    outputDir: LOG_DIR,
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -145,9 +150,7 @@ exports.config = {
     // reporters: ['dot'],
     reporters: [
         'spec',
-        ['junit', {
-            outputDir: './'
-        }]
+        'junit'
     ],
 
     // Options to be passed to Mocha.
