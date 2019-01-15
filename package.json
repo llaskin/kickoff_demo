@@ -14,17 +14,15 @@
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.18",
-    "parallel-mocha": "*",
     "@wdio/cli": "^5.3.0",
-    "@wdio/sauce-service": "*",
     "@wdio/junit-reporter": "*",
     "@wdio/local-runner": "^5.3.0",
     "@wdio/mocha-framework": "^5.2.8",
+    "@wdio/sauce-service": "*",
     "@wdio/selenium-standalone-service": "^5.2.2",
     "@wdio/spec-reporter": "^5.2.3",
     "@wdio/sync": "^5.2.8",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
+    "source-map": "^0.7.3",
     "webdriverio": "^5.3.0"
   }
 }
