@@ -144,7 +144,7 @@ exports.config = {
     // see also: http://webdriver.io/guide/testrunner/reporters.html
     // reporters: ['dot'],
     reporters: [
-        'dot',
+        'spec',
         ['junit', {
             outputDir: './'
         }]

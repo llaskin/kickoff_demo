@@ -18,7 +18,7 @@ describe('Inventory Page Test', function() {
         InventoryPage.open();
         InventoryPage.InventoryItems[1].AddToCartButton.click();
 
-        expect(InventoryPage.getCartCount().to.equal("1");
+        expect(InventoryPage.getCartCount().to.equal("1"));
     });
 
     it("Can add multiple items to the cart", function() {
@@ -26,7 +26,7 @@ describe('Inventory Page Test', function() {
         InventoryPage.InventoryItems[1].AddToCartButton.click();
         InventoryPage.InventoryItems[2].AddToCartButton.click();
 
-        expect(InventoryPage.getCartCount().to.equal("1");
+        expect(InventoryPage.getCartCount().to.equal("1"));
     });
 
 });

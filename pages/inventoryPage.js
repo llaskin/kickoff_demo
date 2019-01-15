@@ -4,7 +4,7 @@
  */
 
  var Page = require('./page');
- var HomePage = require('HomePage');
+ var LoginPage = require('LoginPage');
  var resources = require('../resources');
 
 var InventoryPage = Object.create(Page, {
@@ -38,5 +38,6 @@ var InventoryPage = Object.create(Page, {
         value: function () {
             return this.cartBadge.getText();
         }
-    },
+    }
+});
 

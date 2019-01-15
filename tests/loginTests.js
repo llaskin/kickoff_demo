@@ -5,7 +5,7 @@
 
 var expect = require('chai').expect;
 var resources = require('../resources');
-var HomePage = require('../pages/LoginPage');
+var LoginPage = require('../pages/LoginPage');
 
 
 describe('Login Tests', function() {
@@ -17,7 +17,7 @@ describe('Login Tests', function() {
         LoginPage.setPassword(password);
         LoginPage.login();
         
-        expect(InventoryPage.title()).to.equal('Swag Labs');
+        expect(InventoryPage.title().to.equal('Swag Labs'));
     });
     
     it("Locked User error message", function() {
@@ -27,7 +27,7 @@ describe('Login Tests', function() {
         LoginPage.setPassword(resources.password);
         LoginPage.login();
         
-        expect(HomePage.getErrorMessage()).to.equal(resources.lockedErrorMessage);
+        expect(LoginPage.getErrorMessage().to.equal(resources.lockedErrorMessage));
     });
 
     it("Invalid User", function() {
@@ -37,7 +37,7 @@ describe('Login Tests', function() {
         LoginPage.setPassword(resources.password);
         LoginPage.login();
         
-        expect(HomePage.getErrorMessage()).to.equal(resources.invalidErrorMessage);
+        expect(LoginPage.getErrorMessage().to.equal(resources.invalidErrorMessage));
     });
 
     it("Failing Test", function() {
@@ -47,7 +47,7 @@ describe('Login Tests', function() {
         LoginPage.setPassword(resources.password);
         LoginPage.login();
         
-        expect(InventoryPage.title()).to.equal('Swag Labs');
+        expect(InventoryPage.title().to.equal('Swag Labs'));
     });
 
 });
