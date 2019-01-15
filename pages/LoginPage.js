@@ -1,9 +1,10 @@
 import Page from './Page'
 
+
 class LoginPage extends Page {
   get loginInput () { return $('#user-name') }
   get passwordInput () { return $('#password') }
-  get loginButton () { return $('#login-button') }
+  get loginButton () { return $('.login-button') }
   get errorText () { return $('h3[data-test=error]') }
 
   open (...args) {

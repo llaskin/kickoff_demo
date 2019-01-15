@@ -7,6 +7,7 @@ class InventoryPage extends Page {
   get addToCartButton () { return $('.add-to-cart-button') }
   get cartBadge () { return $('.fa-layers-counter.shopping_cart_badge') }
   get getCartCount () { return this.cartBadge.getText() }
+  get getErrorMessage () { return this.errorText.getText() }
 
   open (username, password) {
     LoginPage.open();
@@ -28,10 +29,7 @@ class InventoryPage extends Page {
     return this.passwordInput.setValue(password)
   }
 
-  getErrorMessage () {
-    return this.errorText.getText()
-  }
-
+  
   login () {
     this.loginInput.setValue(username)
     this.passwordInput.setValue(password)

@@ -3,7 +3,8 @@
  * Tests for the Inventory Page
  */
 import { expect } from 'chai'
-import LoginPage from '../pages/LoginPage'
+import LoginPage from '../pages/loginPage'
+import InventoryPage from '../pages/inventoryPage'
 import resources from '../resources'
 
 describe('Login Tests', () => {
@@ -13,7 +14,7 @@ describe('Login Tests', () => {
         LoginPage.setPassword(resources.password)
         LoginPage.login()
 
-        expect(InventoryPage.title().to.equal('Swag Labs'))
+        expect(InventoryPage.title.to.equal('Swag Labs'))
     })
 
     it("Locked User error message", () => {
