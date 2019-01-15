@@ -1,5 +1,9 @@
+const path = require('path')
+
+const LOG_DIR = path.join(__dirname, 'log')
+
 exports.config = {
-    
+
     //
     // =================
     // Service Providers
@@ -10,8 +14,8 @@ exports.config = {
     //
     user: process.env.SAUCE_USERNAME,
     key: process.env.SAUCE_ACCESS_KEY,
-    
-    
+
+
     //
     // ==================
     // Specify Test Files
@@ -56,21 +60,21 @@ exports.config = {
         // 5 instance gets started at a time.
         //maxInstances: 5,
         //
-      {browserName: 'firefox', platform: 'Windows 10', version: 'latest'},
-      {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
-      {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
-      {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'},
-      {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
-      {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'},
-      {browserName: 'firefox', platform: 'Windows 10', version: 'latest-2'},
-      {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-2'},
-      {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-2'},
-      {browserName: 'firefox', platform: 'Windows 10', version: 'latest-3'},
-      {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-3'},
-      {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-3'},
-      {browserName: 'firefox', platform: 'Windows 10', version: 'latest-3'},
-      {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-3'},
-      {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-3'}
+      {browserName: 'chrome', platform: 'Windows 10', version: 'latest'}
+      // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
+      // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
+      // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'},
+      // {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
+      // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'},
+      // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-2'},
+      // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-2'},
+      // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-2'},
+      // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-3'},
+      // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-3'},
+      // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-3'},
+      // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-3'},
+      // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-3'},
+      // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-3'}
 
 
     ],
@@ -86,7 +90,8 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'error',
+    logLevel: 'trace',
+    outputDir: LOG_DIR,
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -145,9 +150,7 @@ exports.config = {
     // reporters: ['dot'],
     reporters: [
         'spec',
-        ['junit', {
-            outputDir: './'
-        }]
+        'junit'
     ],
 
     // Options to be passed to Mocha.
@@ -155,7 +158,8 @@ exports.config = {
     //
 
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        compilers: ['js:@babel/register']
     },
     // =====
     // Hooks
