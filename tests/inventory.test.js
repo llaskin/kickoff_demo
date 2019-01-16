@@ -13,15 +13,19 @@ describe('Inventory Page Test', () => {
 
     it('Can add an item to the cart', () => {
         InventoryPage.open()
-        InventoryPage.getCartButtonFromInventory(1).click()
-
+        const item = InventoryPage.getCartButtonFromInventory(1)
+        item.waitForDisplayed(10000)
+        item.click() 
         expect(InventoryPage.cartCount).to.equal(1)
     })
 
     it('Can add multiple items to the cart', () => {
         InventoryPage.open()
-        InventoryPage.getCartButtonFromInventory(1).click()
-        InventoryPage.getCartButtonFromInventory(2).click()
+        const item1 = InventoryPage.getCartButtonFromInventory(1)
+        const item2 = InventoryPage.getCartButtonFromInventory(2)
+        item1.waitForDisplayed(10000)
+        item1.click() 
+        item2.click()
 
         expect(InventoryPage.cartCount).to.equal(2)
     })

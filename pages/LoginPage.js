@@ -6,6 +6,7 @@ class LoginPage extends Page {
   get passwordInput () { return $('#password') }
   get loginButton () { return $('.login-button') }
   get errorText () { return $('h3[data-test=error]') }
+  get currentUrl () {return browser.getUrl()}
 
   open (...args) {
     return super.open(...args)

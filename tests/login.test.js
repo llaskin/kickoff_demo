@@ -33,6 +33,6 @@ describe('Login Tests', () => {
         LoginPage.open()
         LoginPage.login(resources.invalidUsername, resources.password)
 
-        expect(InventoryPage.title).to.equal('Swag Labs')
+        expect(LoginPage.currentUrl()).to.contain('inventory')
     })
 })

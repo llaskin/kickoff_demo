@@ -3,8 +3,8 @@ import LoginPage from './LoginPage'
 import resources from '../resources'
 
 class InventoryPage extends Page {
-  get inventoryItems () { return $$('.inventory_item') }
-  get cartBadge () { return $('.fa-layers-counter.shopping_cart_badge') }
+  get inventoryItems () { return $$('.inventory_item .add-to-cart-button') }
+  get cartBadge () { return $('.shopping_cart_badge') }
   get cartCount () { return parseInt(this.cartBadge.getText(), 10) }
   get getErrorMessage () { return this.errorText.getText() }
 
