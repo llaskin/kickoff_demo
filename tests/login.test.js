@@ -10,8 +10,10 @@ import resources from '../resources'
 describe('Login Tests', () => {
     it("Logs In Successfully", () => {
         LoginPage.open()
-        LoginPage.setUsername(resources.goodUsername)
-        LoginPage.setPassword(resources.password)
+        LoginPage.setUsername('standard_user')
+        LoginPage.setPassword('secret_sauce')
+        // LoginPage.setUsername(resources.goodUsername)
+        // LoginPage.setPassword(resources.password)
         LoginPage.login()
 
         expect(InventoryPage.title.to.equal('Swag Labs'))
