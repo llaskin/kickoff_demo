@@ -16,7 +16,7 @@ class LoginPage extends Page {
   }
 
   setUsername (username) {
-    return this.loginInput.setValue(username)
+    return this.loginInput.(username)
   }
 
   setPassword (password) {
