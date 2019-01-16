@@ -3,7 +3,7 @@
  * Tests for the Inventory Page
  */
 import { expect } from 'chai'
-import LoginPage from '../pages/loginPage'
+import LoginPage from '../pages/LoginPage'
 import InventoryPage from '../pages/inventoryPage'
 import resources from '../resources'
 
