@@ -35,7 +35,7 @@ class InventoryPage extends Page {
   }
 
   getCartButtonFromInventory (i) {
-    return this.inventoryItems[i].$('.add-to-cart-button')
+    return this.inventoryItems[i]
   }
 }
 

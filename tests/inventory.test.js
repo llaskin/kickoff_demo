@@ -3,7 +3,7 @@
  * Tests for the Inventory Page
  */
 import { expect } from 'chai'
-import InventoryPage from '../pages/InventoryPage'
+import InventoryPage from '../pages/inventoryPage'
 
 describe('Inventory Page Test', () => {
     it('Has 6 items on the swag page', () => {
