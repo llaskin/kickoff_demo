@@ -4,45 +4,35 @@
  */
 import { expect } from 'chai'
 import LoginPage from '../pages/loginPage'
-import InventoryPage from '../pages/inventoryPage'
+import InventoryPage from '../pages/InventoryPage'
 import resources from '../resources'
 
 describe('Login Tests', () => {
     it("Logs In Successfully", () => {
         LoginPage.open()
-        LoginPage.setUsername('standard_user')
-        LoginPage.setPassword('secret_sauce')
-        // LoginPage.setUsername(resources.goodUsername)
-        // LoginPage.setPassword(resources.password)
-        LoginPage.login()
+        LoginPage.login(resources.goodUsername, resources.password)
 
-        expect(InventoryPage.title.to.equal('Swag Labs'))
+        expect(InventoryPage.title).to.equal('Swag Labs')
     })
 
     it("Locked User error message", () => {
         LoginPage.open()
-        LoginPage.setUsername(resources.lockedUsername)
-        LoginPage.setPassword(resources.password)
-        LoginPage.login()
+        LoginPage.login(resources.lockedUsername, resources.password)
 
-        expect(LoginPage.getErrorMessage().to.equal(resources.lockedErrorMessage))
+        expect(LoginPage.getErrorMessage()).to.equal(resources.lockedErrorMessage)
     })
 
     it("Invalid User", () => {
         LoginPage.open()
-        LoginPage.setUsername('invalid username')
-        LoginPage.setPassword(resources.password)
-        LoginPage.login()
+        LoginPage.login(resources.invalidUsername, resources.password)
 
-        expect(LoginPage.getErrorMessage().to.equal(resources.invalidErrorMessage))
+        expect(LoginPage.getErrorMessage()).to.equal(resources.invalidErrorMessage)
     })
 
     it("Failing Test", () => {
         LoginPage.open()
-        LoginPage.setUsername('invalid username')
-        LoginPage.setPassword(resources.password)
-        LoginPage.login()
+        LoginPage.login(resources.invalidUsername, resources.password)
 
-        expect(InventoryPage.title().to.equal('Swag Labs'))
+        expect(InventoryPage.title).to.equal('Swag Labs')
     })
 })

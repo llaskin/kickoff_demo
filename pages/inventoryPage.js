@@ -4,9 +4,8 @@ import resources from '../resources'
 
 class InventoryPage extends Page {
   get inventoryItems () { return $$('.inventory_item') }
-  get addToCartButton () { return $('.add-to-cart-button') }
   get cartBadge () { return $('.fa-layers-counter.shopping_cart_badge') }
-  get getCartCount () { return this.cartBadge.getText() }
+  get cartCount () { return parseInt(this.cartBadge.getText(), 10) }
   get getErrorMessage () { return this.errorText.getText() }
 
   open (username, password) {
@@ -29,11 +28,14 @@ class InventoryPage extends Page {
     return this.passwordInput.setValue(password)
   }
 
-  
   login () {
     this.loginInput.setValue(username)
     this.passwordInput.setValue(password)
-    submit()
+    this.submit()
+  }
+
+  getCartButtonFromInventory (i) {
+    return this.inventoryItems[i].$('.add-to-cart-button')
   }
 }
 

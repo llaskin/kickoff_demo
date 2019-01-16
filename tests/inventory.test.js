@@ -8,21 +8,21 @@ import InventoryPage from '../pages/InventoryPage'
 describe('Inventory Page Test', () => {
     it('Has 6 items on the swag page', () => {
         InventoryPage.open()
-        expect(InventoryPage.InventoryItems.length.to.equal(5))
+        expect(InventoryPage.inventoryItems.length).to.equal(6)
     })
 
     it('Can add an item to the cart', () => {
         InventoryPage.open()
-        InventoryPage.InventoryItems[1].AddToCartButton.click()
+        InventoryPage.getCartButtonFromInventory(1).click()
 
-        expect(InventoryPage.getCartCount().to.equal('1'))
+        expect(InventoryPage.cartCount).to.equal(1)
     })
 
     it('Can add multiple items to the cart', () => {
         InventoryPage.open()
-        InventoryPage.InventoryItems[1].AddToCartButton.click()
-        InventoryPage.InventoryItems[2].AddToCartButton.click()
+        InventoryPage.getCartButtonFromInventory(1).click()
+        InventoryPage.getCartButtonFromInventory(2).click()
 
-        expect(InventoryPage.getCartCount().to.equal('1'))
+        expect(InventoryPage.cartCount).to.equal(2)
     })
 })
