@@ -4,7 +4,7 @@
  */
 import { expect } from 'chai'
 import LoginPage from '../pages/loginPage'
-import InventoryPage from '../pages/InventoryPage'
+import InventoryPage from '../pages/inventoryPage'
 import resources from '../resources'
 
 describe('Login Tests', () => {
