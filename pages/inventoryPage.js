@@ -1,4 +1,4 @@
-import Page from './Page'
+import Page from './page'
 import LoginPage from './LoginPage'
 import resources from '../resources'
 
