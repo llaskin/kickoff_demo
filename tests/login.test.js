@@ -7,32 +7,11 @@ import LoginPage from '../pages/LoginPage'
 import InventoryPage from '../pages/inventoryPage'
 import resources from '../resources'
 
-describe('Login Tests', () => {
+describe('Login Tests Good', () => {
     it("Logs In Successfully", () => {
         LoginPage.open()
         LoginPage.login(resources.goodUsername, resources.password)
 
         expect(InventoryPage.title).to.equal('Swag Labs')
-    })
-
-    it("Locked User error message", () => {
-        LoginPage.open()
-        LoginPage.login(resources.lockedUsername, resources.password)
-
-        expect(LoginPage.getErrorMessage()).to.equal(resources.lockedErrorMessage)
-    })
-
-    it("Invalid User", () => {
-        LoginPage.open()
-        LoginPage.login(resources.invalidUsername, resources.password)
-
-        expect(LoginPage.getErrorMessage()).to.equal(resources.invalidErrorMessage)
-    })
-
-    it("Failing Test", () => {
-        LoginPage.open()
-        LoginPage.login(resources.invalidUsername, resources.password)
-
-        expect(LoginPage.currentUrl()).to.contain('inventory')
     })
 })
