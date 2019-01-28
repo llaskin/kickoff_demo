@@ -1,0 +1,4 @@
+{
+  "script": "sauce:context=Inventory Page Test - Can add an item to the cart",
+  "args": []
+}

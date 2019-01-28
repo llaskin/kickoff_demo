@@ -146,7 +146,7 @@ exports.config = {
             //
             // If you are using the "allure" reporter you should define the directory where
             // WebdriverIO should save all allure reports.
-            outputDir: './'
+            outputDir: './allure-reports'
         }]
     ],
 
