@@ -199,9 +199,8 @@ exports.config = {
     // },
     //
     // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
-    afterTest: function (test) {
-        console.log("SauceOnDemandSessionID=" + browser.sessionId + " job-name=" + test.title)
-	},
+    // afterTest: function (test) {
+	// },
     //
     // Hook that gets executed after the suite has ended
     // afterSuite: function (suite) {
@@ -209,8 +208,10 @@ exports.config = {
     //
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-    // after: function (result, capabilities, specs) {
-    // },
+    after: function (result, capabilities, specs) {
+                console.log("SauceOnDemandSessionID=" + browser.sessionId + " job-name=" + test.title)
+
+    },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
