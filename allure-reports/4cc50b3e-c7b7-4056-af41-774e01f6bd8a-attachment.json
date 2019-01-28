@@ -1,4 +1,0 @@
-{
-  "script": "sauce:context=Login Tests Good - Logs In Successfully",
-  "args": []
-}
