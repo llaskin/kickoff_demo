@@ -60,12 +60,13 @@ exports.config = {
         // 5 instance gets started at a time.
         //maxInstances: 5,
         //
-        {browserName: 'chrome', platform: 'Windows 10', version: 'latest'},
-        {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
+        {browserName: 'chrome', platform: 'Windows 10', version: 'latest', extendedDebugging: true},
+        {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest', extendedDebugging: true},
         // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
-        // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'}, //removed cuz of Null Pointer Exceptions for Firefox latest-1 on Win10
+        {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'}, //removed cuz of Null Pointer Exceptions for Firefox latest-1 on Win10
         // {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
         // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'}
+
     ],
     //
     // ===================
