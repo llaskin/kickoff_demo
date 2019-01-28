@@ -141,7 +141,13 @@ exports.config = {
     // reporters: ['dot'],
     reporters: [
         'spec',
-        'junit'
+        'junit',
+        ['allure', {
+            //
+            // If you are using the "allure" reporter you should define the directory where
+            // WebdriverIO should save all allure reports.
+            outputDir: './'
+        }]
     ],
 
     // Options to be passed to Mocha.
