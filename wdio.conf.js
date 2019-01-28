@@ -1,6 +1,7 @@
 const path = require('path')
 
 const LOG_DIR = path.join(__dirname, 'log')
+let testName = ''
 
 exports.config = {
 
@@ -60,7 +61,7 @@ exports.config = {
         //maxInstances: 5,
         //
         {browserName: 'chrome', platform: 'Windows 10', version: 'latest'},
-        // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
+        {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
         // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
         // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'}, //removed cuz of Null Pointer Exceptions for Firefox latest-1 on Win10
         // {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
@@ -200,7 +201,7 @@ exports.config = {
     //
     // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
     afterTest: function (test) {
-                console.log("SauceOnDemandSessionID=" + browser.sessionId + " job-name=" + test.title)
+                testName = test.title
 	},
     //
     // Hook that gets executed after the suite has ended
@@ -209,8 +210,9 @@ exports.config = {
     //
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
-//     after: function (result, capabilities, specs) {
-// \    },
+    after: function (result, capabilities, specs) {
+        console.log("SauceOnDemandSessionID=" + browser.sessionId + " job-name=" + testName)
+    },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
     // possible to defer the end of the process using a promise.
