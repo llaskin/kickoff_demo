@@ -60,14 +60,14 @@ exports.config = {
         //maxInstances: 5,
         //
         {browserName: 'chrome', platform: 'Windows 10', version: 'latest'},
-        {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
-        {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
-        {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'},
-        {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
-        {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'},
-        {browserName: 'firefox', platform: 'Windows 10', version: 'latest-2'},
-        {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-2'},
-        {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-2'}
+        // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest'},
+        // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
+        // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'},
+        // {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
+        // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'},
+        // {browserName: 'firefox', platform: 'Windows 10', version: 'latest-2'},
+        // {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest-2'},
+        // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-2'}
     ],
     //
     // ===================
@@ -81,8 +81,8 @@ exports.config = {
     sync: true,
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
-    logLevel: 'trace',
-    outputDir: LOG_DIR,
+    logLevel: 'warn',
+    // outputDir: LOG_DIR,
     //
     // Enables colors for log output.
     coloredLogs: true,
@@ -196,8 +196,9 @@ exports.config = {
     // },
     //
     // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
-    //afterTest: function (test) {
-	//},
+    afterTest: function (test) {
+        console.log("SauceOnDemandSessionID=" + browser.sessionId + " job-name=" + test.title)
+	},
     //
     // Hook that gets executed after the suite has ended
     // afterSuite: function (suite) {
