@@ -62,10 +62,10 @@ exports.config = {
         //
         {browserName: 'chrome', platform: 'Windows 10', version: 'latest', extendedDebugging: true},
         {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest', extendedDebugging: true},
-        // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
+        {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
         {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'}, //removed cuz of Null Pointer Exceptions for Firefox latest-1 on Win10
-        // {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
-        // {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'}
+        {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
+        {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'}
 
     ],
     //
@@ -212,7 +212,7 @@ exports.config = {
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
     after: function (result, capabilities, specs) {
-        console.log("SauceOnDemandSessionID=" + browser.sessionId + " job-name=" + testName)
+        console.log("\nSauceOnDemandSessionID=" + browser.sessionId + " job-name=" + testName)
     },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
