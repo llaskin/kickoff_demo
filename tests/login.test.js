@@ -13,6 +13,5 @@ describe('Login Tests Good', () => {
         LoginPage.login(resources.goodUsername, resources.password)
 
         expect(InventoryPage.title).to.equal('Swag Labs')
-        console.error("in test")
     })
 })
