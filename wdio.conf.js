@@ -166,8 +166,9 @@ exports.config = {
     // resolved to continue.
     //
     // Gets executed once before all workers get launched.
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+      console.log('I AM HERE');
+    },
     //
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
@@ -202,8 +203,8 @@ exports.config = {
     //
     // Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
     afterTest: function (test) {
-                testName = test.title
-	},
+      testName = test.title
+	  },
     //
     // Hook that gets executed after the suite has ended
     // afterSuite: function (suite) {
