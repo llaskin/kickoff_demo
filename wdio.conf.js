@@ -139,7 +139,7 @@ exports.config = {
     // see also: http://webdriver.io/guide/testrunner/reporters.html
     // reporters: ['dot'],
     reporters: [
-        'spec',
+        ['spec', { outputDir: './' }],
         // 'junit'
         // ['allure', {
         //     //
