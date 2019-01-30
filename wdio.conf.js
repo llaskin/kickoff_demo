@@ -140,7 +140,7 @@ exports.config = {
     // reporters: ['dot'],
     reporters: [
         'spec',
-        'junit'
+        // 'junit'
         // ['allure', {
         //     //
         //     // If you are using the "allure" reporter you should define the directory where
@@ -212,7 +212,7 @@ exports.config = {
     // Gets executed after all tests are done. You still have access to all global variables from
     // the test.
     after: function (result, capabilities, specs) {
-        console.error("\nSauceOnDemandSessionID=" + browser.sessionId + " job-name=" + testName)
+        console.log("\nSauceOnDemandSessionID=" + browser.sessionId + " job-name=" + testName)
     },
     //
     // Gets executed after all workers got shut down and the process is about to exit. It is not
