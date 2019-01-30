@@ -81,7 +81,7 @@ exports.config = {
     //
     // Level of logging verbosity: silent | verbose | command | data | result | error
     logLevel: 'trace',
-    // outputDir: LOG_DIR,
+    outputDir: LOG_DIR,
     //
     // Enables colors for log output.
     coloredLogs: true,

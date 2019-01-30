@@ -26,6 +26,6 @@ describe('Login Tests Bad', () => {
         LoginPage.open()
         LoginPage.login(resources.invalidUsername, resources.password)
 
-        expect(LoginPage.currentUrl()).to.contain('inventory')
+        expect(LoginPage.getUrl()).to.contain('inventory')
     })
 })
