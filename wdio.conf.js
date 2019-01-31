@@ -62,7 +62,7 @@ exports.config = {
         //
         {browserName: 'chrome', platform: 'Windows 10', version: 'latest', extendedDebugging: true},
         {browserName: 'chrome', platform: 'OS X 10.10', version: 'latest', extendedDebugging: true},
-        {browserName: 'firefox', platform: 'Windows 7', version: 'latest'},
+        {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest'},
         {browserName: 'firefox', platform: 'Windows 10', version: 'latest-1'}, //removed cuz of Null Pointer Exceptions for Firefox latest-1 on Win10
         {browserName: 'safari', platform: 'OS X 10.10', version: 'latest'},
         {browserName: 'internet explorer', platform: 'Windows 7', version: 'latest-1'}
@@ -165,9 +165,8 @@ exports.config = {
     // resolved to continue.
     //
     // Gets executed once before all workers get launched.
-    onPrepare: function (config, capabilities) {
-      console.log('I AM HERE');
-    },
+    // onPrepare: function (config, capabilities) {
+    // },
     //
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
